@@ -15,7 +15,7 @@ services:
       - my-network
 
   spring_app:
-    image: ahmedtlich/ahmedtlich-5NIDS1-G4-kaddem
+    image: ahmedtlich/ahmedtlich-5nids1-g4-kaddem
     container_name: khaddemProject
     restart: on-failure
     environment:
