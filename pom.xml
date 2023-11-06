@@ -67,6 +67,7 @@
     <distributionManagement>
         <repository>
             <id>deploymentRepo</id>
+            <name>Nexus Repository</name>
             <url>http://192.168.33.69:8081/repository/khaddem/</url>
         </repository>
     </distributionManagement>
