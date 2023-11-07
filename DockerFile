@@ -1,0 +1,5 @@
+FROM openjdk:11
+COPY target/Devops.jar .
+EXPOSE 8085
+ENV IMAGE_NAME="AbirBenKhalifa-5NIDS1-G4"
+ENTRYPOINT ["java", "-jar", "Devops.jar"]
