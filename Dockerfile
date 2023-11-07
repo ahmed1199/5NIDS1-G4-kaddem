@@ -1,4 +1,4 @@
-FROM openjdk:8
+FROM openjdk:8@sha256:467fbc5451c201f2ea6e51ad3a60707de35a54b14e46f04c788d6f3596b3787c
 EXPOSE 8089
 WORKDIR /khaddem
 COPY DEVOPSMS.jar /khaddem/DEVOPSMS.jar
