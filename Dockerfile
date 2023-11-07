@@ -1,4 +1,4 @@
-FROM openjdk:17
+FROM openjdk:17-jre-slim
 
 COPY target/DEVOPSMS.jar .
 EXPOSE 8089
