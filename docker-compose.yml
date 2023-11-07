@@ -13,7 +13,7 @@ services:
     volumes:
       - mysql_data:/var/lib/mysql
   spring_app:
-    image: maleksahli/maleksahli-5nids1-g4-kaddem
+    image: maleksahli/maleksahli-5nids1-g4-khaddem
     restart: on-failure
     container_name: springapp
     ports:
