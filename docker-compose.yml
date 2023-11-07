@@ -6,10 +6,10 @@ services:
     image: mysql:5.7
     restart: unless-stopped
     environment:
-      - MYSQL_ROOT_PASSWORD= 
-      - MYSQL_DATABASE= khaddemApp
+      - MYSQL_ROOT_PASSWORD=passpass
+      - MYSQL_DATABASE=khaddemApp
       - MYSQL_USER=root
-      - MYSQL_PASSWORD=
+      - MYSQL_PASSWORD=passpass
     ports:
       - 3306:3306
     volumes:
