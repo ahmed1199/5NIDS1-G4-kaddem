@@ -62,6 +62,7 @@
                 </configuration>
             </plugin>
         </plugins>
+        <finalName>Devops</finalName>
     </build>
     <!-- Deploy to Nexus -->
     <distributionManagement>
