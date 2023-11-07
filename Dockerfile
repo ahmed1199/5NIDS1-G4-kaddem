@@ -1,8 +1,5 @@
-FROM openjdk:21@sha256:467fbc5451c201f2ea6e51ad3a60707de35a54b14e46f04c788d6f3596b3787c
-
-COPY target/DEVOPSMS.jar .
+FROM openjdk:8
 EXPOSE 8089
-ENV IMAGE_NAME="maleksahli/maleksahli-5nids1-g4-khaddem"
-
-
+WORKDIR /khaddem
+COPY DEVOPSMS.jar /khaddem/DEVOPSMS.jar
 ENTRYPOINT ["java", "-jar", "DEVOPSMS.jar"]
