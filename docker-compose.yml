@@ -8,8 +8,6 @@ services:
     environment:
       - MYSQL_ROOT_PASSWORD=passpass
       - MYSQL_DATABASE=khaddemApp
-      - MYSQL_USER=root
-      - MYSQL_PASSWORD=passpass
     ports:
       - 3306:3306
     volumes:
