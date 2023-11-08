@@ -79,11 +79,5 @@
         </plugins>
         <finalName>devPROJECT</finalName>
     </build>
-    <distributionManagement>
-        <repository>
-            <id>deploymentRepo</id>
-            <name>Nexus Repository</name>
-            <url>http://192.168.1.17:8081/repository/projet_nexus/</url>
-        </repository>
-    </distributionManagement>
+
 </project>
