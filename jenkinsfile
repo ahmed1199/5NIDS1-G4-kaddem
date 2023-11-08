@@ -1,0 +1,68 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('git') {
+            steps {
+              git branch: 'GhadaSaidi-5NIDS1-G4', credentialsId: 'ProjetDev', url: 'https://github.com/ahmed1199/5NIDS1-G4-kaddem.git'
+            }
+        }
+         
+        
+         stage('Build') {
+            steps {
+                echo 'Building the project with Maven...';
+                sh 'mvn clean package'
+            }
+        }
+        
+         
+         stage('JUnit / Mockito') {
+            steps {
+                sh 'mvn test'
+            }
+        }
+        
+        stage('Sonarqube') {
+             steps {
+                sh "mvn sonar:sonar -Dsonar.login=admin -Dsonar.password=Ghada***2024"
+             }
+         }
+       
+        
+       
+         
+        stage('Nexus') {
+            steps {
+                sh 'mvn deploy'
+            }
+        
+        
+        }
+       
+        
+stage('Docker Image') {
+            steps {
+                sh 'docker build -t ghada1996/ghadanids1g4khaddem . -f Dockerfile';
+            }
+        }
+            stage('Docker hub') {
+             steps {//sh 'echo image_pushed'
+               withCredentials([string(credentialsId: 'DockerHub-pw', variable: 'DOCKER')]) {
+                    sh 'docker login -u ghada1996 -p ${DOCKER}'
+    // some block
+}
+
+                 
+                 sh 'docker push ghada1996/ghadanids1g4khaddem'
+                 }
+        }
+        
+        stage('Docker Compose') {
+            steps {
+                sh 'docker compose up -d';
+            }
+        }
+    }
+    
+}
